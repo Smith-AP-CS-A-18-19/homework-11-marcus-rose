@@ -2,26 +2,32 @@ import java.util.ArrayList;
 
 public class Homework11 {
 
+public ArrayList<Integer> list;
 	/* Finish the constructor and create any necessary instance
 	 * variables. The constructor should create and save an
 	 * ArrayList of int values
 	 */
 	public Homework11() {
-
+		list = new ArrayList<Integer>();
 	}
 
 	/* Return the stored ArrayList
 	 */
 	public ArrayList<Integer> getList() {
-
+		return list;
 	}
 
 	/* Fill the stored array list with integers, starting
 	 * at n and up to, but not including, m. The size of
 	 * the resultant ArrayList should be n - m.
 	 */
-	public void problem1(int n, int m) {
 
+	public void problem1(int n, int m) {
+		int num = n;
+		for (int i = 0; i < (m - n); i++) { //???
+			list.add(num);
+			num += 1;
+		}
 	}
 
 	/* Remove from the stored array list all numbers that
@@ -29,8 +35,16 @@ public class Homework11 {
 	 * remove an item from the ArrayList, all elements to
 	 * the right shift their indices down one.
 	 */
-	public void problem2(int n) {
 
+	public void problem2(int n) {
+	int i = 0;
+	while (i < list.size()) {
+			if ((list.get(i) % n) == 0) {
+				list.remove(i);
+			} else {
+				i += 1;
+			}
+		}
 	}
 
 	/* Problem 3:
@@ -103,7 +117,7 @@ public class Homework11 {
 
 		hw11a.problem2(12);
 		if (al.size() != 4) {
-			System.out.println("Fail 5.1");
+			System.out.println(al.size());
 			passed = false;
 		} else if (al.get(3) != 12) {
 			System.out.println("Fail 5.2");
