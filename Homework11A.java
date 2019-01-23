@@ -18,6 +18,7 @@ private ArrayList<Integer> list2;
     return sum;
   }
 
+	@Override
   public void problem2(int n) {
     int i = 0;
     while (i < list.size()) {
